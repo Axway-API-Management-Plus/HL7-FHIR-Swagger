@@ -11,9 +11,16 @@ This artefact was successfully tested for the following versions:
 
 ## Usage
 
-```
-Import Swagger documents into Axway API Management 
-```
+
+Import Swagger documents into Axway API Management
+
+We are currently leveraging the HL7 Health Intersections FHIR server for testing.
+* http://fhir3.healthintersections.com.au/open
+
+You may use any FHIR server endpoint you wish. List of test FHIR server:
+
+* http://wiki.hl7.org/index.php?title=Publicly_Available_FHIR_Servers_for_testing
+
 
 ## Bug and Caveats
 
