@@ -23,7 +23,7 @@ You may use any FHIR server endpoint you wish. List of publicly available test F
 * http://wiki.hl7.org/index.php?title=Publicly_Available_FHIR_Servers_for_testing
 
 ### Change FHIR Server Endpoint
-To change the FHIR server endpoint.  Open the Swagger file and change the "host" field as shown below.
+To change the FHIR server endpoint, open the Swagger file and change the "host" field as shown below.
 ```
 {
     "swagger": "2.0",
