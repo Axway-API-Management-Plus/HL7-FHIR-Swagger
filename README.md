@@ -11,15 +11,29 @@ This artefact was successfully tested for the following versions:
 
 ## Usage
 
-
+### Import
 Import Swagger documents into Axway API Management
 
+### Test FHIR Servers
 We are currently leveraging the HL7 Health Intersections FHIR server for testing.
 * http://fhir3.healthintersections.com.au/open
 
-You may use any FHIR server endpoint you wish. List of test FHIR server:
+You may use any FHIR server endpoint you wish. List of publicly available test FHIR server:
 
 * http://wiki.hl7.org/index.php?title=Publicly_Available_FHIR_Servers_for_testing
+
+### Change FHIR Server Endpoint
+To change the FHIR server endpoint.  Open the Swagger file and change the "host" field as shown below.
+```
+{
+    "swagger": "2.0",
+    "host": "fhir3.healthintersections.com.au/open",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    ....
+```
 
 
 ## Bug and Caveats
