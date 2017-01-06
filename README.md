@@ -6,9 +6,6 @@ This artefact was successfully tested for the following versions:
 - v7.5.2
 
 
-## Install
-
-
 ## Usage
 
 ### Import
