@@ -19,8 +19,9 @@ Import Swagger documents into Axway API Management
 
 ```
 The Swagger documents in this repository do not fully document the FHIR REST API specification.  
-They only cover the more common scenarios.  You may need to elaborate on them if functionality 
-or descriptive text is messing.   See Contributing below for how to contribute back. 
+The Swagger documents only cover the more common scenarios.  You may need to elaborate on the 
+swagger documents if functionality or descriptive text is missing.   
+See Contributing below for how to contribute back. 
 ```
 
 ## Contributing
