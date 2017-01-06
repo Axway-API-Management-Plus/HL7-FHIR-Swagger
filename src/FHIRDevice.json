@@ -1,0 +1,619 @@
+{
+    "swagger": "2.0",
+    "host": "fhir3.healthintersections.com.au/open",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/Device/{id}/_tags": {
+            "get": {
+                "description": "get a list of tags used for the nominated resource. This duplicates the HTTP header entries\n",
+                "operationId": "GET /Device/{id}/_tags",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            },
+            "post": {
+                "description": "Affix tags in the list to the nominated resource\n",
+                "operationId": "POST /Device/{id}/_tags",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Succesfully affix tags\n"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/_history/{vid}/_tags/_delete": {
+            "post": {
+                "description": "Removes all tags in the provided list of tags for the nominated version of the resource\n",
+                "operationId": "POST /Device/{id}/_history/{vid}/_tags/_delete",
+                "consumes": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "vid",
+                        "type": "string"
+                    },
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful deletion of tags"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/_tags/_delete": {
+            "post": {
+                "description": "Removes all tags in the provided list of tags for the nominated resource\n",
+                "operationId": "POST /Device/{id}/_tags/_delete",
+                "consumes": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Status 204"
+                    }
+                }
+            }
+        },
+        "/metadata": {
+            "get": {
+                "description": "Retrieve resource\n",
+                "operationId": "GET /metadata",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            }
+        },
+        "/Device/$meta": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/$meta",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved resource(s)\n"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/$validate": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/{id}/$validate",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/_history/{vid}": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/{id}/_history/{vid}",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "vid",
+                        "type": "string"
+                    },
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        },
+        "/Device/{id}": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/{id}",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    },
+                    "404": {
+                        "description": "Tried to get an unknown resource\n"
+                    },
+                    "410": {
+                        "description": "Tried to get a deleted resource\n"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+                    }
+                }
+            },
+            "put": {
+                "description": "Update an existing instance\n",
+                "operationId": "PUT /Device/{id}",
+                "consumes": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully updated the instance \n"
+                    },
+                    "201": {
+                        "description": "Succesfully created the instance \n"
+                    },
+                    "400": {
+                        "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+                    },
+                    "404": {
+                        "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+                    },
+                    "405": {
+                        "description": "Method Not allowed - the resource did not exist prior to the update, and the server does not allow client defined ids\n"
+                    },
+                    "409": {
+                        "description": "Version conflict management\n"
+                    },
+                    "412": {
+                        "description": "Version conflict management\n"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete resource\n",
+                "operationId": "DELETE /Device/{id}",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Succesfully deleted resource\n"
+                    },
+                    "404": {
+                        "description": "Not Found - resource was not found\n"
+                    },
+                    "405": {
+                        "description": "Method Not allowed - delete is not allowed\n"
+                    }
+                }
+            }
+        },
+        "/Device/_search": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/_search",
+                "produces": [
+                    "application/atom+xml",
+                    "application/json+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/_history/{vid}/_tags": {
+            "get": {
+                "description": "get a list of tags used for the nominated version of the resource.  This duplicates the HTTP header entries.\n",
+                "operationId": "GET /Device/{id}/_history/{vid}/_tags",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "vid",
+                        "type": "string"
+                    },
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            },
+            "post": {
+                "description": "Affix tags in the list to the nominated verion of the resource\n",
+                "operationId": "POST /Device/{id}/_history/{vid}/_tags",
+                "consumes": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "vid",
+                        "type": "string"
+                    },
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Succesfully affix tags\n"
+                    }
+                }
+            }
+        },
+        "/_tags": {
+            "get": {
+                "description": "get a list of all tags\n",
+                "operationId": "GET /_tags",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "description": "Retrieve resource\n",
+                "operationId": "GET /",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new resource\n",
+                "operationId": "POST /",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Succesfully created a new resource\n"
+                    }
+                }
+            }
+        },
+        "/Device/_validate/{id}": {
+            "post": {
+                "description": "Create a new resource\n",
+                "operationId": "POST /Device/_validate/{id}",
+                "consumes": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Validates a type\n"
+                    }
+                }
+            }
+        },
+        "/Device": {
+            "get": {
+                "description": "Get Device",
+                "operationId": "GET /Device",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new type\n",
+                "operationId": "POST /Device",
+                "consumes": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Succesfully created a new type\n"
+                    },
+                    "400": {
+                        "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+                    },
+                    "404": {
+                        "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+                    }
+                }
+            }
+        },
+        "/Device/_tags": {
+            "get": {
+                "description": "get a list of tags used for the nominated resource type\n",
+                "operationId": "GET /Device/_tags",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            }
+        },
+        "/$meta": {
+            "get": {
+                "description": "",
+                "operationId": "GET /$meta",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved resource(s)\n"
+                    }
+                }
+            }
+        },
+        "/_history": {
+            "get": {
+                "description": "Whole System History\n",
+                "operationId": "GET /_history",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesfully retrieved resource\n"
+                    }
+                }
+            }
+        },
+        "/Device/$validate": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/$validate",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/$everything": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/{id}/$everything",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        },
+        "/Device/_history": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/_history",
+                "produces": [
+                    "application/atom+xml",
+                    "application/json+fhir"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        },
+        "/Device/{id}/_history": {
+            "get": {
+                "description": "",
+                "operationId": "GET /Device/{id}/_history",
+                "produces": [
+                    "application/json+fhir",
+                    "application/xml+fhir"
+                ],
+                "parameters": [
+                    {
+                        "required": true,
+                        "in": "path",
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status 200"
+                    }
+                }
+            }
+        }
+    },
+    "info": {
+        "title": "FHIR Device",
+        "description": "This resource identifies an instance of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device. Medical devices includes durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health. Non-medical devices may include items such as a machine, cellphone, computer, application, etc. For more information: https://www.hl7.org/fhir/device.html",
+        "version": "2"
+    },
+    "x-axway": {
+        "corsEnabled": true,
+        "basePaths": [
+            ""
+        ],
+        "serviceType": "rest",
+        "deprecated": false,
+        "tags" : {
+			"Group" : [ "FHIR", " Identification", " Devices" ]
+		}
+    }
+}
