@@ -3,7 +3,7 @@ This is a repository of Swagger documents representing the HL7 FHIR REST API Imp
 
 ## API Management Version Compatibilty
 This artefact was successfully tested for the following versions:
-- Vx.x
+- v7.5.2
 
 
 ## Install
